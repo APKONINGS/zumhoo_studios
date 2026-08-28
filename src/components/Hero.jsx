@@ -63,7 +63,6 @@ export default function Hero({ ready, reducedMotion }) {
         <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
           <a
             href="#work"
-            data-cursor="View"
             className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-ink"
           >
             Explore our work
@@ -71,7 +70,6 @@ export default function Hero({ ready, reducedMotion }) {
           </a>
           <a
             href="#start"
-            data-cursor="→"
             className="magnetic-btn inline-flex items-center gap-2 rounded-full border border-bone/25 px-6 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-bone glass-dark"
           >
             Start a project

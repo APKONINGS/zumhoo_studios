@@ -119,17 +119,6 @@
   }
 }
 
-/* ---- Custom cursor (desktop only, see Cursor.jsx which toggles a body class) ---- */
-@media (hover: hover) and (pointer: fine) {
-  body.has-custom-cursor {
-    cursor: none;
-  }
-  body.has-custom-cursor a,
-  body.has-custom-cursor button {
-    cursor: none;
-  }
-}
-
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,

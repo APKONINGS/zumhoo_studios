@@ -5,8 +5,7 @@ import { InstagramIcon, FacebookIcon, YoutubeIcon } from './SocialIcons'
 const NAV = [
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#capabilities' },
-  { label: 'Journal', href: '#journal' },
+  { label: 'Start a project', href: '#start' },
   { label: 'Contact', href: '#footer-contact' },
 ]
 
@@ -43,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {NAV.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} data-cursor="→" className="lift-on-hover text-sm text-stone hover:text-bone">
+                  <a href={n.href} className="lift-on-hover text-sm text-stone hover:text-bone">
                     {n.label}
                   </a>
                 </li>
@@ -60,7 +59,6 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    data-cursor="→"
                     className="lift-on-hover flex items-center gap-2 text-sm text-stone hover:text-bone"
                   >
                     <Icon className="h-3.5 w-3.5" /> {label}

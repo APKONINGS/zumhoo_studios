@@ -23,7 +23,6 @@ export default function ProjectCTA() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href={`tel:${SITE.phone.tel}`}
-              data-cursor="→"
               className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-ink"
             >
               Start a project
@@ -31,7 +30,6 @@ export default function ProjectCTA() {
             </a>
             <a
               href="#footer-contact"
-              data-cursor="→"
               className="magnetic-btn inline-flex items-center gap-2 rounded-full border border-bone/25 px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-bone"
             >
               Contact us

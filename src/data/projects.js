@@ -1,157 +1,103 @@
-import { IMG } from './site'
+import { IMG, SITE } from './site'
 
-// Placeholder project data. Structure is production-ready — swap image/title/
-// category/year/description with real Zumhoo credits when available. Nothing
-// here is a real production credit; every entry is clearly a placeholder.
-// Order matters: the grid lays these out left-to-right, top-to-bottom, and
-// each `size` maps directly to how much room it takes in that flow (see
-// WorkGrid.jsx SIZE_CLASSES). Row 1 = large + medium. Row 2 = three small.
-// Row 3 = one full-width. Reorder both together if you change the shape.
-export const PROJECTS = [
+// Work is organized the way the client actually thinks about their output:
+// Film, Brand Stories (a mix of corporate work + film), Photography, and
+// Graphic Design. Video items link straight out to the real YouTube channel;
+// image items link out to the real Instagram — every link on this page is a
+// verified, working URL, never a dead "#". Swap `href` for a specific
+// video/post URL per item once real links are supplied; everything else
+// (title, year, description) stays a placeholder until then.
+export const CATEGORIES = ['Film', 'Brand Stories', 'Photography', 'Graphic Design']
+
+export const WORK_ITEMS = [
   {
-    id: 'p1',
+    id: 'w1',
     title: '[PROJECT TITLE]',
     category: 'Film',
+    type: 'video',
     year: '[YEAR]',
     image: IMG.onSetGelLight,
-    description: '[PROJECT DESCRIPTION]',
-    featured: true,
-    size: 'large',
+    href: SITE.social.youtube,
   },
   {
-    id: 'p2',
+    id: 'w2',
+    title: '[PROJECT TITLE]',
+    category: 'Brand Stories',
+    type: 'video',
+    year: '[YEAR]',
+    image: IMG.studioMic,
+    href: SITE.social.youtube,
+  },
+  {
+    id: 'w3',
     title: '[PROJECT TITLE]',
     category: 'Photography',
-    year: '[YEAR]',
-    image: IMG.vintageCameraRim,
-    description: '[PROJECT DESCRIPTION]',
-    size: 'medium',
-  },
-  {
-    id: 'p3',
-    title: '[PROJECT TITLE]',
-    category: 'Television',
-    year: '[YEAR]',
-    image: IMG.clapperDesert,
-    description: '[PROJECT DESCRIPTION]',
-    size: 'small',
-  },
-  {
-    id: 'p5',
-    title: '[PROJECT TITLE]',
-    category: 'Photography',
+    type: 'image',
     year: '[YEAR]',
     image: IMG.portraitWoman,
-    description: '[PROJECT DESCRIPTION]',
-    size: 'small',
+    href: SITE.social.instagram,
   },
   {
-    id: 'p6',
+    id: 'w4',
+    title: '[PROJECT TITLE]',
+    category: 'Graphic Design',
+    type: 'image',
+    year: '[YEAR]',
+    image: IMG.designSwatches,
+    href: SITE.social.instagram,
+  },
+  {
+    id: 'w5',
     title: '[PROJECT TITLE]',
     category: 'Film',
+    type: 'video',
     year: '[YEAR]',
     image: IMG.clapperHeld,
-    description: '[PROJECT DESCRIPTION]',
-    size: 'small',
+    href: SITE.social.youtube,
   },
   {
-    id: 'p4',
+    id: 'w6',
     title: '[PROJECT TITLE]',
-    category: 'Brand & Commercial',
+    category: 'Brand Stories',
+    type: 'image',
     year: '[YEAR]',
     image: IMG.cameraFlatlay,
-    description: '[PROJECT DESCRIPTION]',
-    size: 'wide',
-  },
-]
-
-export const FEATURED_PROJECT = {
-  title: '[PROJECT TITLE]',
-  description: '[SHORT DESCRIPTION — a line or two once a real title is confirmed.]',
-  duration: '00:00',
-  image: IMG.onSetGelLight,
-}
-
-export const CAPABILITIES = [
-  {
-    n: '01',
-    title: 'Film & Television',
-    text: '[CAPABILITY DESCRIPTION]',
-    image: IMG.projector,
+    href: SITE.social.instagram,
   },
   {
-    n: '02',
-    title: 'Video Production',
-    text: '[CAPABILITY DESCRIPTION]',
-    image: IMG.onSetGelLight,
-  },
-  {
-    n: '03',
-    title: 'Photography',
-    text: '[CAPABILITY DESCRIPTION]',
-    image: IMG.cameraFlatlay,
-  },
-  {
-    n: '04',
-    title: 'Brand & Commercial Content',
-    text: '[CAPABILITY DESCRIPTION]',
-    image: IMG.studioMic,
-  },
-  {
-    n: '05',
-    title: 'Creative Direction',
-    text: '[CAPABILITY DESCRIPTION]',
-    image: IMG.filmReels,
-  },
-  {
-    n: '06',
-    title: 'Training / Consulting',
-    text: '[CAPABILITY DESCRIPTION]',
+    id: 'w7',
+    title: '[PROJECT TITLE]',
+    category: 'Photography',
+    type: 'image',
+    year: '[YEAR]',
     image: IMG.vintageCameraRim,
+    href: SITE.social.instagram,
   },
-]
-
-export const BTS_GALLERY = [
-  { image: IMG.clapperHeld, tall: true },
-  { image: IMG.onSetGelLight, tall: false },
-  { image: IMG.filmReels, tall: false },
-  { image: IMG.portraitMan, tall: true },
-  { image: IMG.clapperDesert, tall: false },
-  { image: IMG.studioMic, tall: false },
-  { image: IMG.cameraFlatlay, tall: true },
-  { image: IMG.portraitWoman, tall: false },
-]
-
-export const RECOGNITION = [
-  { award: '[AWARD]', project: '[PROJECT]', year: '[YEAR]' },
-  { award: '[AWARD]', project: '[PROJECT]', year: '[YEAR]' },
-  { award: '[AWARD]', project: '[PROJECT]', year: '[YEAR]' },
-]
-
-export const JOURNAL = [
   {
+    id: 'w8',
+    title: '[PROJECT TITLE]',
+    category: 'Graphic Design',
+    type: 'image',
+    year: '[YEAR]',
+    image: IMG.designStyleGuide,
+    href: SITE.social.instagram,
+  },
+  {
+    id: 'w9',
+    title: '[PROJECT TITLE]',
+    category: 'Brand Stories',
+    type: 'video',
+    year: '[YEAR]',
+    image: IMG.portraitMan,
+    href: SITE.social.youtube,
+  },
+  {
+    id: 'w10',
+    title: '[PROJECT TITLE]',
     category: 'Film',
-    title: '[ARTICLE TITLE]',
-    date: '[DATE]',
-    image: IMG.filmReels,
+    type: 'video',
+    year: '[YEAR]',
+    image: IMG.clapperDesert,
+    href: SITE.social.youtube,
   },
-  {
-    category: 'Behind the Scenes',
-    title: '[ARTICLE TITLE]',
-    date: '[DATE]',
-    image: IMG.clapperHeld,
-  },
-  {
-    category: 'Culture',
-    title: '[ARTICLE TITLE]',
-    date: '[DATE]',
-    image: IMG.typewriterNews,
-  },
-]
-
-export const TIMELINE = [
-  { label: 'Founding', detail: '[DETAIL]' },
-  { label: 'Early Productions', detail: '[DETAIL]' },
-  { label: 'Major Projects', detail: '[DETAIL]' },
-  { label: 'Today', detail: '[DETAIL]' },
 ]

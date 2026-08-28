@@ -4,6 +4,13 @@ import { useEffect, useState } from 'react'
  * A brief film-ident style opener: ZUMHOO / STUDIO WORKS on black, then a
  * lens-iris wipe reveals the page. Skips straight through for
  * prefers-reduced-motion and stays well under ~2.4s total.
+ *
+ * The timing effect intentionally runs once on mount only (empty deps) —
+ * not on every change to `reducedMotion` or `onDone`. `onDone` in
+ * particular is recreated on every parent re-render; depending on it here
+ * would replay the whole stage timeline (and pull the preloader back over
+ * the page) the next time App re-renders for an unrelated reason, e.g. a
+ * work-filter click.
  */
 export default function Preloader({ onDone, reducedMotion }) {
   const [stage, setStage] = useState('mark') // mark -> word -> wipe -> done
@@ -21,7 +28,8 @@ export default function Preloader({ onDone, reducedMotion }) {
       clearTimeout(t2)
       clearTimeout(t3)
     }
-  }, [onDone, reducedMotion])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (reducedMotion) return null
 

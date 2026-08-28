@@ -23,19 +23,6 @@ export function useScrolled(threshold = 60) {
   return scrolled
 }
 
-// Fires `end` when the pointer is fine (desktop) — used to gate the custom cursor.
-export function useIsFinePointer() {
-  const [fine, setFine] = useState(false)
-  useEffect(() => {
-    const mq = window.matchMedia('(hover: hover) and (pointer: fine)')
-    setFine(mq.matches)
-    const onChange = (e) => setFine(e.matches)
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
-  return fine
-}
-
 // One-shot IntersectionObserver reveal — returns a ref and a boolean.
 export function useReveal(options = {}) {
   const ref = useRef(null)

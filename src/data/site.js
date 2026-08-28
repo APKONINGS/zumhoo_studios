@@ -44,6 +44,8 @@ export const IMG = {
   portraitMan: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919',
   portraitWoman: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce',
   ridgeSunset: 'https://images.unsplash.com/photo-1500534623283-312aade485b7',
+  designSwatches: 'https://images.unsplash.com/photo-1561070791-2526d30994b5',
+  designStyleGuide: 'https://images.unsplash.com/photo-1558655146-d09347e92766',
 }
 
 export const img = (url, { w = 1600, h, fit = 'crop', q = 80 } = {}) => {
