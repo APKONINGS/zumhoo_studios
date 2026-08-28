@@ -4,22 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm copper accent — the film/lens tone. Used sparingly.
-        accent: '#C88A52',
-        'accent-dark': '#A06A38',
-        'accent-light': '#DDAD7C',
-        // Near-black cinematic base
-        ink: '#0A0908',
-        'ink-raised': '#141210',
-        'ink-soft': '#1C1916',
-        // Warm off-white for reversed/light passages
-        paper: '#F4EFE6',
-        'paper-dim': '#DCD4C4',
+        // Brand indigo-blue, sampled from the real Zumhoo Studios logo.
+        // Used sparingly, same role the old copper accent played.
+        accent: '#4B5AE0',
+        'accent-dark': '#23245F',
+        'accent-light': '#9BA3F0',
+        // Near-black cinematic base, cool-toned (was warm charcoal)
+        ink: '#0A0A12',
+        'ink-raised': '#1B1D42',
+        'ink-soft': '#14152A',
+        // Cool off-white for reversed/light passages
+        paper: '#EDEDF5',
+        'paper-dim': '#C7C7DA',
         // Text tones
-        bone: '#EFE9DD',
-        stone: '#9C9285',
-        line: 'rgba(239,233,221,0.14)',
-        'line-soft': 'rgba(239,233,221,0.08)',
+        bone: '#F1F0F5',
+        stone: '#9C9CB8',
+        line: 'rgba(241,240,245,0.14)',
+        'line-soft': 'rgba(241,240,245,0.08)',
       },
       fontFamily: {
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],

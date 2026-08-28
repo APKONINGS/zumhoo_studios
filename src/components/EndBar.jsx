@@ -1,4 +1,4 @@
-import { Aperture, Phone } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { SITE } from '../data/site'
 import { InstagramIcon, FacebookIcon, YoutubeIcon } from './SocialIcons'
 
@@ -14,10 +14,8 @@ export default function EndBar() {
   return (
     <footer id="footer-contact" className="border-t border-line bg-ink">
       <div className="mx-auto flex max-w-[1600px] flex-col items-center gap-5 px-6 py-8 text-center sm:flex-row sm:justify-between sm:px-10 sm:text-left lg:px-16">
-        <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50">
-            <Aperture className="h-4 w-4 text-accent" strokeWidth={2} />
-          </span>
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt={SITE.name} className="h-7 w-auto opacity-90" />
           <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-stone">
             &copy; {SITE.year} {SITE.name} — Cameroon
           </span>

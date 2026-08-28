@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, ArrowUpRight, Aperture } from 'lucide-react'
+import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { useScrolled } from '../lib/hooks'
 import { SITE } from '../data/site'
 import { CATEGORY_INFO } from '../data/projects'
@@ -26,13 +26,8 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-          <Link to="/" className="group flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50">
-              <Aperture className="h-4 w-4 text-accent" strokeWidth={2} />
-            </span>
-            <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-bone">
-              {SITE.name}
-            </span>
+          <Link to="/" className="flex items-center" aria-label={SITE.name}>
+            <img src="/logo.png" alt={SITE.name} className="h-9 w-auto sm:h-10" />
           </Link>
 
           <nav className="hidden items-center gap-8 xl:flex">
