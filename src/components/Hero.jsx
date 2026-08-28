@@ -57,12 +57,12 @@ export default function Hero({ ready, reducedMotion }) {
         </h1>
 
         <p className="hero-meta mt-8 max-w-md font-mono text-xs uppercase tracking-[0.2em] text-stone sm:text-sm">
-          Film · Television · Photography · Visual Storytelling
+          Film · Brand Stories · Photography · Graphic Design
         </p>
 
         <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
           <a
-            href="#work"
+            href="#highlights"
             className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-ink"
           >
             Explore our work

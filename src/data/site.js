@@ -46,6 +46,12 @@ export const IMG = {
   ridgeSunset: 'https://images.unsplash.com/photo-1500534623283-312aade485b7',
   designSwatches: 'https://images.unsplash.com/photo-1561070791-2526d30994b5',
   designStyleGuide: 'https://images.unsplash.com/photo-1558655146-d09347e92766',
+  brainstormMeeting: 'https://images.unsplash.com/photo-1552664730-d307ca884978',
+  handshake: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf',
+  santorini: 'https://images.unsplash.com/photo-1533105079780-92b9be482077',
+  floatingCamera: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e',
+  mountainLake: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e',
+  editingSuite: 'https://images.unsplash.com/photo-1567443024551-f3e3cc2be870',
 }
 
 export const img = (url, { w = 1600, h, fit = 'crop', q = 80 } = {}) => {

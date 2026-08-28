@@ -1,18 +1,22 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu, X, ArrowUpRight, Aperture } from 'lucide-react'
 import { useScrolled } from '../lib/hooks'
 import { SITE } from '../data/site'
-import { CATEGORIES } from '../data/projects'
+import { CATEGORY_INFO } from '../data/projects'
 
-export default function Navbar({ onSelectCategory }) {
+const CATEGORY_LINKS = Object.values(CATEGORY_INFO)
+
+const linkClass = ({ isActive }) =>
+  `lift-on-hover whitespace-nowrap font-mono text-xs uppercase tracking-[0.18em] transition-colors ${
+    isActive ? 'text-bone' : 'text-stone hover:text-bone'
+  }`
+
+export default function Navbar() {
   const scrolled = useScrolled(60)
   const [open, setOpen] = useState(false)
 
   const close = () => setOpen(false)
-  const selectCategory = (cat) => {
-    onSelectCategory?.(cat)
-    close()
-  }
 
   return (
     <>
@@ -22,25 +26,20 @@ export default function Navbar({ onSelectCategory }) {
         }`}
       >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-          <a href="#home" className="group flex items-center gap-2.5">
+          <Link to="/" className="group flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/50">
               <Aperture className="h-4 w-4 text-accent" strokeWidth={2} />
             </span>
             <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-bone">
               {SITE.name}
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 xl:flex">
-            {CATEGORIES.map((cat) => (
-              <a
-                key={cat}
-                href="#work"
-                onClick={() => onSelectCategory?.(cat)}
-                className="lift-on-hover whitespace-nowrap font-mono text-xs uppercase tracking-[0.18em] text-stone hover:text-bone transition-colors"
-              >
-                {cat}
-              </a>
+            {CATEGORY_LINKS.map((cat) => (
+              <NavLink key={cat.slug} to={`/${cat.slug}`} className={linkClass}>
+                {cat.name}
+              </NavLink>
             ))}
           </nav>
 
@@ -74,45 +73,32 @@ export default function Navbar({ onSelectCategory }) {
       >
         <div className="grain-overlay opacity-[0.03]" />
         <nav className="flex h-full flex-col justify-center gap-6 px-8">
-          <a
-            href="#work"
-            onClick={() => selectCategory('All')}
+          <Link
+            to="/"
+            onClick={close}
             className="font-serif text-4xl italic text-bone transition-transform duration-500"
             style={{
-              transitionDelay: open ? '0ms' : '0ms',
               transform: open ? 'translateX(0)' : 'translateX(24px)',
               opacity: open ? 1 : 0,
             }}
           >
-            Work
-          </a>
-          {CATEGORIES.map((cat, i) => (
-            <a
-              key={cat}
-              href="#work"
-              onClick={() => selectCategory(cat)}
-              className="pl-4 font-serif text-2xl italic text-stone transition-transform duration-500"
+            Home
+          </Link>
+          {CATEGORY_LINKS.map((cat, i) => (
+            <Link
+              key={cat.slug}
+              to={`/${cat.slug}`}
+              onClick={close}
+              className="font-serif text-3xl italic text-stone transition-transform duration-500"
               style={{
                 transitionDelay: open ? `${(i + 1) * 60}ms` : '0ms',
                 transform: open ? 'translateX(0)' : 'translateX(24px)',
                 opacity: open ? 1 : 0,
               }}
             >
-              {cat}
-            </a>
+              {cat.name}
+            </Link>
           ))}
-          <a
-            href="#about"
-            onClick={close}
-            className="font-serif text-4xl italic text-bone transition-transform duration-500"
-            style={{
-              transitionDelay: open ? `${(CATEGORIES.length + 1) * 60}ms` : '0ms',
-              transform: open ? 'translateX(0)' : 'translateX(24px)',
-              opacity: open ? 1 : 0,
-            }}
-          >
-            About
-          </a>
           <a
             href="#start"
             onClick={close}

@@ -111,6 +111,20 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Homepage highlight reel: two copies of the track scroll left together,
+     looping seamlessly the instant the first is fully off-screen. */
+  .marquee-track {
+    animation: marquee 42s linear infinite;
+  }
+  .marquee-track:hover,
+  .marquee-track:focus-within {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 @layer utilities {
